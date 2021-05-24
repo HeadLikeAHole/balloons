@@ -1,3 +1,9 @@
 RewriteEngine On
+
+# redirect from http to https
 RewriteCond %{HTTP:X-Forwarded-Proto} =http
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# remove php extension from url
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
