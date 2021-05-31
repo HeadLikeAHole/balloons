@@ -19,6 +19,7 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // destroy cookies
+setcookie('user_id', '', time() - 3600, '/');
 setcookie('username', '', time() - 3600, '/');
 setcookie('password', '', time() - 3600, '/');
 

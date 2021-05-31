@@ -20,8 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1490ca2-0fd7-4e34-aac1-622fe9378a23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/errors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/product-submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/one.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/one.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/three.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/three.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/two.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/two.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/db.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/fns.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/helperFunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/login.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login-submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/logout.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/logout-submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/product.inc.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/product-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql_tables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +79,8 @@
       <recent name="D:\web_dev\php\balloons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\web_dev\php\balloons\includes" />
+      <recent name="D:\web_dev\php\balloons\inc\classes" />
       <recent name="D:\web_dev\php\balloons\inc" />
     </key>
   </component>
@@ -84,7 +102,15 @@
       <workItem from="1621524014703" duration="9729000" />
       <workItem from="1621615107454" duration="6865000" />
       <workItem from="1621850244480" duration="5311000" />
-      <workItem from="1621878204049" duration="3858000" />
+      <workItem from="1621878204049" duration="4924000" />
+      <workItem from="1621933168661" duration="8588000" />
+      <workItem from="1622051000818" duration="3912000" />
+      <workItem from="1622102732619" duration="8294000" />
+      <workItem from="1622225641786" duration="3232000" />
+      <workItem from="1622362718628" duration="592000" />
+      <workItem from="1622368405470" duration="24838000" />
+      <workItem from="1622444704536" duration="11299000" />
+      <workItem from="1622476761902" duration="7458000" />
     </task>
     <servers />
   </component>
@@ -107,13 +133,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="629" y="221" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622383093146">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="629" y="221" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622383093146" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622379416716">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622379416716" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1620665450364">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620665450364" />
-    <state x="795" y="442" key="NewPhpFileDialog" timestamp="1621854778583">
+    <state x="791" y="242" key="NewPhpClassDialog" timestamp="1622383078303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="795" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621854778583" />
+    <state x="791" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622383078303" />
+    <state x="795" y="442" key="NewPhpFileDialog" timestamp="1622453257487">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="795" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622453257487" />
   </component>
 </project>

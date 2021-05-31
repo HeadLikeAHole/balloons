@@ -1,10 +1,10 @@
 <?php
 
-require_once 'inc/fns.inc.php';
+include 'includes/classes/UserModel.php';
 
 session_start();
 
-$user = getLoggedInUser();
+$user = (new UserModel)->getLoggedInUser();
 
 ?>
 
@@ -44,7 +44,7 @@ $user = getLoggedInUser();
                             <a class="nav-link" href="#"><?= $user->username ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/inc/logout.inc.php">Выйти</a>
+                            <a class="nav-link" href="/includes/logout-submit.php">Выйти</a>
                         </li>
                     </ul>
                 <?php endif; ?>

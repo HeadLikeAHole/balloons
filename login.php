@@ -2,7 +2,7 @@
 
 <h1 class="display-4 text-center mb-4">Вход на сайт</h1>
 
-<form action="inc/login.inc.php" method="post">
+<form action="includes/login-submit.php" method="post">
     <div class="mb-3">
         <label for="username" class="form-label">Логин</label>
         <input type="text" class="form-control" id="username" name="username" value="<?= $_GET['username'] ?? '' ?>">

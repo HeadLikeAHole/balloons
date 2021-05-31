@@ -10,7 +10,7 @@ CREATE TABLE `products` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `user_id` INT NOT NULL,
     `category_id` INT NOT NULL,
-    `image_path` VARCHAR(50) NOT NULL,
+    `image_name` VARCHAR(55) NOT NULL,
     `title` VARCHAR(255) NOT NULL,
     `description` TEXT NOT NULL,
     `price` INT
@@ -18,5 +18,5 @@ CREATE TABLE `products` (
 
 CREATE TABLE `categories` (
 	`id` INT PRIMARY KEY AUTO_INCREMENT,
-	`name` VARCHAR(255) UNIQUE NOT NULL,
+	`name` VARCHAR(255) UNIQUE NOT NULL
 );

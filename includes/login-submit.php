@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['login-submit'])) {
-    require 'fns.inc.php';
+    include 'classes/UserModel.php';
 
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -17,7 +17,7 @@ if (isset($_POST['login-submit'])) {
     }
 
     try {
-        $user = findUser($username);
+        $user = (new UserModel)->get('username', $username);;
 
         if (!$user) {
             header("Location: /login?error=3&username=$username");
@@ -32,11 +32,13 @@ if (isset($_POST['login-submit'])) {
         session_start();
         session_regenerate_id();
 
+        $_SESSION['user_id'] = $user->id;
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $user->password;
 
         $expiration = strtotime('+3 months');;
 
+        setcookie('user_id', $user->id, $expiration, '/');
         setcookie('username', $username, $expiration, '/');
         setcookie('password', $user->password, $expiration, '/');
 

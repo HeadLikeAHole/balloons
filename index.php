@@ -1,7 +1,7 @@
 <?php
 
-include_once 'header.php';
+include 'header.php';
 
-include_once 'home.php';
+include 'home.php';
 
-include_once 'footer.php';
+include 'footer.php';

@@ -1,16 +1,17 @@
 <?php
 
 include 'header.php';
-require_once 'inc/fns.inc.php';
+include 'includes/classes/CategoryModel.php';
 
-$categories = getCategories();
+$categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
 
 ?>
 
 <div class="product-form mx-auto">
     <h1 class="display-4 text-center mb-4">Создать шарик</h1>
 
-    <form action="inc/product.inc.php" method="post" enctype="multipart/form-data">
+    <form action="includes/product-submit.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="user_id" name="user_id" value="<?= $user->id ?>">
         <div class="mb-3">
             <label for="image" class="form-label">Выберите изображение</label>
             <input class="form-control" type="file" id="image" name="image">
@@ -24,11 +25,11 @@ $categories = getCategories();
         </div>
         <div class="mb-4">
             <label for="description" class="form-label">Описание</label>
-            <textarea class="form-control" id="description" name="description" rows="3"><?= $_GET['title'] ?? '' ?></textarea>
+            <textarea class="form-control" id="description" name="description" rows="3"><?= $_GET['description'] ?? '' ?></textarea>
         </div>
         <div class="mb-4">
-            <label for="category" class="form-label">Категория</label>
-            <select class="form-select" id="category" name="category">
+            <label for="category_id" class="form-label">Категория</label>
+            <select class="form-select" id="category_id" name="category_id">
                 <?php foreach ($categories as $category): ?>
                     <option value="<?= $category->id ?>"><?= $category->name ?></option>
                 <?php endforeach; ?>
