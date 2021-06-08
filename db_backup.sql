@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2021 at 06:45 PM
+-- Generation Time: Jun 08, 2021 at 07:50 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -67,7 +67,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `user_id`, `category_id`, `image_name`, `title`, `description`, `price`) VALUES
-(1, 1, 2, 'abstract2.png', 'ujyjuyjyj', 'yujuyjuyjuyjy', NULL);
+(4, 1, 1, 'balloons.jpg', 'Lorem', 'Impsum', NULL),
+(5, 1, 1, 'balloons1.jpeg', 'g5egerger', 'gergre', NULL),
+(6, 1, 1, 'balloons2.jpg', 'rgeg', 'egegerge', NULL),
+(7, 1, 2, 'balloons3.jpg', 'geger', 'gegegre', NULL);
 
 -- --------------------------------------------------------
 
@@ -126,7 +129,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`

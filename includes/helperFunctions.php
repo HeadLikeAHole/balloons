@@ -1,7 +1,7 @@
 <?php
 
-function sendError($to, $error)
+function sendError($to, $data)
 {
-    header("Location: /$to?error=$error");
+    header("Location: /$to?" . http_build_query($data));
     exit;
 }

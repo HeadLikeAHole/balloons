@@ -1,23 +1,33 @@
 <?php
 
-include_once 'DbConnection.php';
 
-class Model extends DbConnection
+class Model
 {
-    protected $_tableName;
+    protected $tableName;
+    private $pdo;
+
+    public function __construct() {
+        include __DIR__ . '/../../config.php';
+
+        $this->pdo = new PDO($dns, $user, $password);
+
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
 
     private function query($sql, $params = [])
     {
-        $query = $this->_pdo->prepare($sql);
+        $query = $this->pdo->prepare($sql);
 
         $query->execute($params);
+
+        $query->setFetchMode(PDO::FETCH_CLASS, get_called_class());
 
         return $query;
     }
 
     public function get($column, $value)
     {
-        $sql = "SELECT * FROM $this->_tableName WHERE $column = :$column";
+        $sql = "SELECT * FROM $this->tableName WHERE $column = :$column";
 
         $params = [":$column" => $value];
 
@@ -28,12 +38,12 @@ class Model extends DbConnection
 
     public function getAll($where = [], $params = [])
     {
-        $sql = "SELECT * FROM $this->_tableName";
+        $sql = "SELECT * FROM $this->tableName";
 
         if ($where) {
             $sql .= ' WHERE ';
 
-            foreach ($where as $key => $value) {
+            foreach ($where as $key => $_) {
                 $sql .= "$key = :$key AND ";
             }
 
@@ -61,44 +71,47 @@ class Model extends DbConnection
         return $query->fetchAll();
     }
 
-    public function create()
+    private function create($fields)
     {
         $columns = '';
-        $values = '';
-        $params = [];
+        $params = '';
 
-        $sql = "INSERT INTO $this->_tableName (";
+        $sql = "INSERT INTO $this->tableName (";
 
-        foreach ($this as $key => $value) {
-            if ($key[0] !== '_') {
-                $columns .= "$key,";
-                $values .= ":$key,";
-                $params[":$key"] = $value;
-            }
+        foreach ($fields as $key => $_) {
+            $columns .= "$key,";
+            $params .= ":$key,";
         }
 
         $columns = rtrim($columns, ',');
-        $values = rtrim($values, ',');
+        $params = rtrim($params, ',');
 
-        $sql = $sql . $columns . ') VALUES (' . $values . ')';
+        $sql = $sql . $columns . ') VALUES (' . $params . ')';
 
-        $this->query($sql, $params);
+        return $this->query($sql, $fields);
     }
 
-    public function update($fields)
+    private function update($fields)
     {
-        $sql = "UPDATE $this->_tableName SET ";
+        $sql = "UPDATE $this->tableName SET ";
 
-        foreach ($fields as $key => $value) {
+        foreach ($fields as $key => $_) {
             $sql .= "`$key` = :$key,";
         }
 
         $sql = rtrim($sql, ',');
 
-        $sql .= " WHERE $this->primaryKey = :$this->primaryKey";
+        $sql .= ' WHERE id = :id';
 
-        $fields['primaryKey'] = $fields['id'];
+        return $this->query($sql, $fields);
+    }
 
-        $this->query($sql, $fields);
+    public function save($fields)
+    {
+        if (is_null($fields['id'])) {
+            return $this->create($fields);
+        }
+
+        return $this->update($fields);
     }
 }

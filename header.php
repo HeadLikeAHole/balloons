@@ -44,7 +44,7 @@ $user = (new UserModel)->getLoggedInUser();
                             <a class="nav-link" href="#"><?= $user->username ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/includes/logout-submit.php">Выйти</a>
+                            <a class="nav-link" href="/includes/logout-submit">Выйти</a>
                         </li>
                     </ul>
                 <?php endif; ?>

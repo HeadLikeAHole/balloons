@@ -4,7 +4,7 @@ include_once 'Model.php';
 
 class UserModel extends Model
 {
-    protected $_tableName = 'users';
+    protected $tableName = 'users';
 
     function getLoggedInUser()
     {
