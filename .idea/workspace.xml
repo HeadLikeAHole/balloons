@@ -21,24 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a1490ca2-0fd7-4e34-aac1-622fe9378a23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_backup.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/abstract.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/one.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/three.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/two.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/CategoryModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/CategoryModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/DbConnection.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/ProductModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/helperFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/helperFunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/balloons.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/errors.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/errors.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/product-submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/product-submit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/product-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +108,8 @@
       <workItem from="1622960954292" duration="9253000" />
       <workItem from="1623062940424" duration="595000" />
       <workItem from="1623088069505" duration="588000" />
-      <workItem from="1623164600878" duration="1374000" />
+      <workItem from="1623164600878" duration="2605000" />
+      <workItem from="1623258150635" duration="4899000" />
     </task>
     <servers />
   </component>

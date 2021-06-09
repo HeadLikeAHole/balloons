@@ -88,12 +88,28 @@ if (isset($_POST['product-submit'])) {
             $imageTmpName = $image['tmp_name'];
             if (!file_exists($imageTmpName)) {
                 $data['error'] = 'failure-to-upload';
-                sendError('product-form', $data);        }
-
-            $imageFilePath = "../images/$imageName";
-            if (!move_uploaded_file($imageTmpName, $imageFilePath)) {
-                $data['error'] = 'failure-to-upload';
                 sendError('product-form', $data);
+            }
+
+            $newImageFilePath = "../images/$imageName";
+
+            // if id is present edit image file, otherwise create a new one
+            if ($id && $imageError !== 4) {
+                $oldImageFilePath = '../images/' . $product->get('id', $id)->image_name;
+
+                if (!file_exists($oldImageFilePath)) {
+                    $data['error'] = 'failure-to-rename';
+                    sendError('product-form', $data);
+                }
+
+                if (!rename($oldImageFilePath, $newImageFilePath)) {
+                    $data['error'] = 'failure-to-rename';
+                    sendError('product-form', $data);                }
+            } else {
+                if (!move_uploaded_file($imageTmpName, $newImageFilePath)) {
+                    $data['error'] = 'failure-to-rename';
+                    sendError('product-form', $data);
+                }
             }
         }
 
