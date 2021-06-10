@@ -96,7 +96,7 @@ class Model
         $sql = "UPDATE $this->tableName SET ";
 
         foreach ($fields as $key => $_) {
-            $sql .= "`$key` = :$key,";
+            $sql .= "$key = :$key,";
         }
 
         $sql = rtrim($sql, ',');
@@ -113,5 +113,13 @@ class Model
         }
 
         return $this->update($fields);
+    }
+
+    public function delete()
+    {
+        $sql = "DELETE FROM $this->tableName WHERE id = :id";
+        $params = [':id' => $this->id];
+
+        return $this->query($sql, $params);
     }
 }

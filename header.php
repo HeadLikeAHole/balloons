@@ -20,7 +20,7 @@ $user = (new UserModel)->getLoggedInUser();
     <title>Шары</title>
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-2">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">ДН Шары</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
