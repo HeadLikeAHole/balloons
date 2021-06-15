@@ -1,0 +1,4 @@
+- success messages
+- footer
+- product list
+- 404 and 403 pages

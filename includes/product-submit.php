@@ -1,8 +1,9 @@
 <?php
 
-if (isset($_POST['product-submit'])) {
+include 'main.php';
+
+if (isset($_POST['product-submit']) && $user) {
     include 'classes/ProductModel.php';
-    include 'helperFunctions.php';
 
     try {
         // data to be converted to query string inside "sendError" method
@@ -28,27 +29,27 @@ if (isset($_POST['product-submit'])) {
         $data['description'] = $description;
 
         if ($id !== null && (!is_numeric($id) || $id <= 0 || $id > 2147483647)) {
-            $data['error'] = 'invalid-product-id';
+            $data['error'] = 'productidinvalid';
             sendError('product-form', $data);
         }
 
         if (!is_numeric($user_id) || $user_id <= 0 || $user_id > 2147483647) {
-            $data['error'] = 'invalid-user-id';
+            $data['error'] = 'useridinvalid';
             sendError('product-form', $data);
         }
 
         if (!is_numeric($category_id) || $category_id <= 0 || $category_id > 2147483647) {
-            $data['error'] = 'invalid-category-id';
+            $data['error'] = 'categoryidinvalid';
             sendError('product-form', $data);
         }
 
         if (strlen($title) < 1 || strlen($title) > 255) {
-            $data['error'] = 'invalid-title';
+            $data['error'] = 'title-invalid';
             sendError('product-form', $data);
         }
 
         if (strlen($description) < 1 || strlen($description  > 65535)) {
-            $data['error'] = 'invalid-description';
+            $data['error'] = 'description-invalid';
             sendError('product-form', $data);
         }
 
@@ -59,7 +60,7 @@ if (isset($_POST['product-submit'])) {
 
         if ($id && $imageError !== 4 || !$id) {
             if ($imageError !== 0) {
-                $data['error'] = 'no-image-selected';
+                $data['error'] = 'image-not-selected';
                 sendError('product-form', $data);
             }
 
@@ -71,12 +72,12 @@ if (isset($_POST['product-submit'])) {
 
             $imageName = $image['name'];
             if (strlen($imageName) < 1 || strlen($imageName) > 50) {
-                $data['error'] = 'invalid-image-name';
+                $data['error'] = 'image-name-invalid';
                 sendError('product-form', $data);
             }
 
             if (preg_match('/^[a-zA-Z0-9\s_-]+\.(jpg|jpeg|png|gif)$/', $imageName) != 1) {
-                $data['error'] = 'invalid-image-extension';
+                $data['error'] = 'image-extension-invalid';
                 sendError('product-form', $data);
             }
 
@@ -87,7 +88,7 @@ if (isset($_POST['product-submit'])) {
 
             $imageTmpName = $image['tmp_name'];
             if (!file_exists($imageTmpName)) {
-                $data['error'] = 'failure-to-upload';
+                $data['error'] = 'image-upload-failure';
                 sendError('product-form', $data);
             }
 
@@ -98,16 +99,16 @@ if (isset($_POST['product-submit'])) {
                 $oldImageFilePath = '../images/' . $product->get('id', $id)->image_name;
 
                 if (!file_exists($oldImageFilePath)) {
-                    $data['error'] = 'failure-to-rename';
+                    $data['error'] = 'image-rename-failure';
                     sendError('product-form', $data);
                 }
 
                 if (!rename($oldImageFilePath, $newImageFilePath)) {
-                    $data['error'] = 'failure-to-rename';
+                    $data['error'] = 'image-rename-failure';
                     sendError('product-form', $data);                }
             } else {
                 if (!move_uploaded_file($imageTmpName, $newImageFilePath)) {
-                    $data['error'] = 'failure-to-rename';
+                    $data['error'] = 'image-rename-failure';
                     sendError('product-form', $data);
                 }
             }
@@ -125,8 +126,9 @@ if (isset($_POST['product-submit'])) {
 
         header('Location: /?message=success');
     } catch (PDOException $e) {
-        sendError('product-form', 'db-error');
+        $data['error'] = 'dberror';
+        sendError('product-form', $data);
     }
 } else {
-    header('Location: /');
+    sendError('product-form', 'access-denied');
 }

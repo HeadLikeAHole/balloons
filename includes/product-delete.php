@@ -1,8 +1,9 @@
 <?php
 
-if (isset($_POST['product-submit'])) {
+include 'main.php';
+
+if (isset($_POST['product-delete']) && $user) {
     include 'classes/ProductModel.php';
-    include 'helperFunctions.php';
 
     try {
         // data to be converted to query string inside "sendError" method
@@ -13,12 +14,22 @@ if (isset($_POST['product-submit'])) {
         $product = (new ProductModel())->get('id', $id);
 
         if ($product) {
+            $imageFilePath = '../images/' . $product->image_name;
+
+            if (file_exists($imageFilePath)) {
+                if (!unlink($imageFilePath)) {
+                    $data['category'] = $product->category_id;
+                    $data['error'] = 'image-delete-failure';
+                    sendError('products', $data);
+                }
+            }
+
             $product->delete();
-            header('Location: /');
         }
         header('Location: /?message=success');
     } catch (PDOException $e) {
-        sendError('product-form', 'db-error');
+        $data['error'] = 'dberror';
+        sendError('/', $data);
     }
 } else {
     header('Location: /');

@@ -14,7 +14,7 @@ $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
 ?>
 
 <div class="product-form mx-auto">
-    <h1 class="display-4 text-center mb-4">Создать шарик</h1>
+    <h1 class="display-4 text-center mb-5">Создать товар</h1>
 
     <form action="includes/product-submit" method="post" enctype="multipart/form-data">
         <input type="hidden" id="id" name="id" value="<?= $product->id ?? '' ?>">
@@ -25,10 +25,15 @@ $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
             <div class="mt-3">
                 <img src="<?= isset($product) ? $product->getImageUrl() : '' ?>" alt="" id="image-preview" class="w-100">
             </div>
+            <!-- display file field error (starts with "image-") -->
+            <?php if (isset($_GET['error']) && substr($_GET['error'], 0, strlen('image-')) === 'image-'): ?>
+                <div class="invalid-feedback">Please provide a valid city.</div>
+            <?php endif; ?>
         </div>
         <div class="mb-4">
             <label for="title" class="form-label">Haзвание</label>
-            <input type="text" class="form-control" id="title" name="title" value="<?= $_GET['title'] ?? $product->title ?? '' ?>">
+            <input type="text" class="form-control is-invalid" id="title" name="title" value="<?= $_GET['title'] ?? $product->title ?? '' ?>">
+            <div class="invalid-feedback">Example invalid feedback text</div>
         </div>
         <div class="mb-4">
             <label for="description" class="form-label">Описание</label>

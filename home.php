@@ -25,6 +25,10 @@ $categories = array_slice($categories, 1);
                 <div class="carousel-caption">
                     <h1><?= $slide->title ?></h1>
                     <p><?= $slide->description ?></p>
+                    <?php if ($user): ?>
+                        <a href="/product-form?id=<?= $slide->id ?>"><button type="button" class="btn btn-warning btn-sm">Изменить</button></a>
+                        <a href="/product-confirm-delete?id=<?= $slide->id ?>"><button type="button" class="btn btn-danger btn-sm">Удалить</button></a>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -42,9 +46,9 @@ $categories = array_slice($categories, 1);
 <div class="row mt-3">
     <?php foreach ($categories as $category): ?>
         <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
-            <div class="card">
-                <div class="card-body">
-                    <a href="/products?category=<?= $category->id ?>"><h5 class="card-title text-center"><?= $category->name ?></h5></a>
+            <div class="card mb-1 bg-light bg-gradient">
+                <div class="card-body shadow-sm">
+                    <a href="/products?category=<?= $category->id ?>" class="text-decoration-none"><h5 class="card-title text-center"><?= $category->name ?></h5></a>
                 </div>
             </div>
         </div>

@@ -1,12 +1,4 @@
-<?php
-
-include 'includes/classes/UserModel.php';
-
-session_start();
-
-$user = (new UserModel)->getLoggedInUser();
-
-?>
+<?php include 'includes/main.php' ?>
 
 <html>
 <head>
@@ -52,3 +44,8 @@ $user = (new UserModel)->getLoggedInUser();
         </div>
     </nav>
     <div class="container">
+        <!-- display general errors and errors from hidden fields (errors that don't contain hyphens in their names) -->
+        <?php if (isset($_GET['error']) && strpos($_GET['error'], '-') === false): ?>
+            <div class="invalid-feedback">Please provide a valid city.</div>
+        <?php endif; ?>
+

@@ -21,9 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a1490ca2-0fd7-4e34-aac1-622fe9378a23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/balloons2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/errors.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/errors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/login-submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login-submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/product-delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/product-delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/product-submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/product-submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-confirm-delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/product-confirm-delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/product-form.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +117,12 @@
       <workItem from="1623164600878" duration="2605000" />
       <workItem from="1623258150635" duration="4899000" />
       <workItem from="1623267113721" duration="198000" />
-      <workItem from="1623329756981" duration="11795000" />
+      <workItem from="1623329756981" duration="12894000" />
+      <workItem from="1623431996817" duration="5164000" />
+      <workItem from="1623569810067" duration="2868000" />
+      <workItem from="1623674786191" duration="596000" />
+      <workItem from="1623696756355" duration="590000" />
+      <workItem from="1623771672800" duration="8354000" />
     </task>
     <servers />
   </component>
@@ -133,6 +145,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="729" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1623435414993">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="729" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1623435414993" />
     <state x="629" y="221" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622566846385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -149,17 +165,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="791" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622383078303" />
-    <state x="795" y="442" key="NewPhpFileDialog" timestamp="1623344711721">
+    <state x="795" y="442" key="NewPhpFileDialog" timestamp="1623572571717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="795" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623344711721" />
+    <state x="795" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623572571717" />
     <state x="461" y="151" key="SettingsEditor" timestamp="1622897731196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622897731196" />
-    <state x="616" y="235" key="run.anything.popup" timestamp="1622732995290">
+    <state x="616" y="235" key="run.anything.popup" timestamp="1623778883097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="235" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622732995290" />
+    <state x="616" y="235" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1623778883097" />
   </component>
 </project>

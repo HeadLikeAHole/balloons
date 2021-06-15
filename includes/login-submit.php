@@ -6,27 +6,30 @@ if (isset($_POST['login-submit'])) {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 
+    $data = [];
+    $data['username'] = $username;
+
     if (empty($username)) {
-        header('Location: /login?error=1');
-        exit;
+        $data['error'] = 'username-empty';
+        sendError('login', $data);
     }
 
     if (empty($password)) {
-        header("Location: /login?error=2&username=$username");
-        exit;
+        $data['error'] = 'password-empty';
+        sendError('login', $data);
     }
 
     try {
         $user = (new UserModel)->get('username', $username);;
 
         if (!$user) {
-            header("Location: /login?error=3&username=$username");
-            exit;
+            $data['error'] = 'username-wrong';
+            sendError('login', $data);
         }
 
         if (!password_verify($password, $user->password)) {
-            header("Location: /login?error=4&username=$username");
-            exit;
+            $data['error'] = 'password-wrong';
+            sendError('login', $data);
         }
 
         session_start();
@@ -44,8 +47,8 @@ if (isset($_POST['login-submit'])) {
 
         header('Location: /?message=0');
     } catch (PDOException $e) {
-        header('Location: /login?error=0');
-        exit;
+        $data['error'] = 'dberror';
+        sendError('login', $data);
     }
 } else {
     header('Location: /');
