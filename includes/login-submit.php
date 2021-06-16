@@ -2,6 +2,7 @@
 
 if (isset($_POST['login-submit'])) {
     include 'classes/UserModel.php';
+    include 'helperFunctions.php';
 
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);

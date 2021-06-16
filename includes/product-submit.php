@@ -1,9 +1,10 @@
 <?php
 
-include 'main.php';
+include 'user.php';
 
 if (isset($_POST['product-submit']) && $user) {
     include 'classes/ProductModel.php';
+    include 'helperFunctions.php';
 
     try {
         // data to be converted to query string inside "sendError" method
@@ -28,10 +29,10 @@ if (isset($_POST['product-submit']) && $user) {
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
         $data['description'] = $description;
 
-        if ($id !== null && (!is_numeric($id) || $id <= 0 || $id > 2147483647)) {
-            $data['error'] = 'productidinvalid';
-            sendError('product-form', $data);
-        }
+//        if ($id == 1) {
+//            $data['error'] = 'productidinvalid';
+//            sendError('product-form', $data);
+//        }
 
         if (!is_numeric($user_id) || $user_id <= 0 || $user_id > 2147483647) {
             $data['error'] = 'useridinvalid';

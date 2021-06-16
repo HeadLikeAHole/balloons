@@ -1,9 +1,10 @@
 <?php
 
-include 'main.php';
+include 'user.php';
 
 if (isset($_POST['product-delete']) && $user) {
     include 'classes/ProductModel.php';
+    include 'helperFunctions.php';
 
     try {
         // data to be converted to query string inside "sendError" method
