@@ -5,4 +5,8 @@ include 'errors.php';
 
 session_start();
 
-$user = (new UserModel)->getLoggedInUser();
+try {
+    $user = (new UserModel)->getLoggedInUser();
+} catch (PDOException $e) {
+    displayDbError();
+}

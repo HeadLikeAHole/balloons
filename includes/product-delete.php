@@ -29,8 +29,7 @@ if (isset($_POST['product-delete']) && $user) {
         }
         header('Location: /?message=success');
     } catch (PDOException $e) {
-        $data['error'] = 'dberror';
-        sendError('/', $data);
+        displayDbError();
     }
 } else {
     header('Location: /');

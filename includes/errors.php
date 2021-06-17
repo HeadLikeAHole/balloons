@@ -1,7 +1,6 @@
 <?php
 
 $errors = [
-    'dberror' => 'Ошибка базы данных.',
     'username-empty' => 'Укажите логин.',
     'password-empty' => 'Укажите пароль.',
     'username-wrong' => 'Логин не существует.',
@@ -20,3 +19,13 @@ $errors = [
     'image-rename-failure' => 'Неудалось переименовать изображение.',
     'image-delete-failure' => 'Неудалось удалить изображение.'
 ];
+
+function displayDbError()
+{
+    echo '    
+        <div style="text-align: center;">
+            <h1 style="color: red;">Ошибка базы данных.</h3>
+        </div>
+    ';
+    exit;
+}

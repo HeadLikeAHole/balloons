@@ -127,8 +127,7 @@ if (isset($_POST['product-submit']) && $user) {
 
         header('Location: /?message=success');
     } catch (PDOException $e) {
-        $data['error'] = 'dberror';
-        sendError('product-form', $data);
+        displayDbError();
     }
 } else {
     sendError('product-form', 'access-denied');
