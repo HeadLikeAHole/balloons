@@ -1,6 +1,6 @@
 <?php
 
-include 'user.php';
+include 'common.php';
 
 if (isset($_POST['product-delete']) && $user) {
     include 'classes/ProductModel.php';

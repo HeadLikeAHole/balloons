@@ -1,4 +1,4 @@
-<?php include 'includes/user.php' ?>
+<?php include 'includes/common.php' ?>
 
 <html>
 <head>
@@ -44,3 +44,7 @@
         </div>
     </nav>
     <div class="container">
+        <!-- display errors other than from user filled out fields (errors that don't contain hyphens in their names) -->
+        <?php if (isset($_GET['error']) && strpos($_GET['error'], '-') === false): ?>
+            <h5 class="mb-4 text-center text-danger"><?= $errors[$_GET['error']] ?></h5>
+        <?php endif; ?>

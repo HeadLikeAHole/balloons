@@ -3,7 +3,6 @@
 include 'header.php';
 include 'includes/classes/ProductModel.php';
 include 'includes/classes/CategoryModel.php';
-include 'includes/errors.php';
 
 if (isset($_GET['id'])) {
     $product = (new ProductModel)->get('id', $_GET['id']);
@@ -16,11 +15,6 @@ $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
 
 <div class="product-form mx-auto">
     <h1 class="display-4 text-center mb-5">Создать товар</h1>
-
-    <!-- display general errors and errors from hidden fields (errors that don't contain hyphens in their names) -->
-    <?php if (isset($_GET['error']) && strpos($_GET['error'], '-') === false): ?>
-        <div class="mb-4 text-danger"><?= $errors[$_GET['error']] ?></div>
-    <?php endif; ?>
 
     <form action="includes/product-submit" method="post" enctype="multipart/form-data">
         <input type="hidden" id="id" name="id" value="<?= $product->id ?? '' ?>">
@@ -76,3 +70,4 @@ $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
 </div>
 
 <?php include 'footer.php' ?>
+
