@@ -1,5 +1,7 @@
 <?php
 
+include 'helperFunctions.php';
+
 session_start();
 
 // Unset all of the session variables.
@@ -23,4 +25,7 @@ setcookie('user_id', '', time() - 3600, '/');
 setcookie('username', '', time() - 3600, '/');
 setcookie('password', '', time() - 3600, '/');
 
-header('Location: /');
+session_start();
+// without this function message isn't saved to session for some reason
+session_regenerate_id();
+sendMessage('', 'warning', 'Вы вышли из своего аккаунта.');

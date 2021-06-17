@@ -1,11 +1,9 @@
 <?php
 
 include 'common.php';
+include 'classes/ProductModel.php';
 
 if (isset($_POST['product-delete']) && $user) {
-    include 'classes/ProductModel.php';
-    include 'helperFunctions.php';
-
     try {
         // data to be converted to query string inside "sendError" method
         $data = [];
@@ -27,10 +25,10 @@ if (isset($_POST['product-delete']) && $user) {
 
             $product->delete();
         }
-        header('Location: /?message=success');
+        sendMessage('', 'success', 'Товар был удален.');
     } catch (PDOException $e) {
         displayDbError();
     }
 } else {
-    header('Location: /');
+    header('Location: /403');
 }

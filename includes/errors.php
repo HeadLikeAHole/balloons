@@ -5,9 +5,6 @@ $errors = [
     'password-empty' => 'Укажите пароль.',
     'username-wrong' => 'Логин не существует.',
     'password-wrong' => 'Неверный пароль.',
-    'productidinvalid' => 'Неверный ID товара.',
-    'useridinvalid' => 'Неверный ID пользователя.',
-    'categoryidinvalid' => 'Неверный ID категории.',
     'title-invalid' => 'Название должно содержать от 1 до 255 символов.',
     'description-invalid' => 'Описание должно содержать от 1 до 65535 символов.',
     'image-not-selected' => 'Убедитесь, что Вы выбрали изображение.',
@@ -22,10 +19,6 @@ $errors = [
 
 function displayDbError()
 {
-    echo '    
-        <div style="text-align: center;">
-            <h1 style="color: red;">Ошибка базы данных.</h3>
-        </div>
-    ';
+    echo '<h1 style="text-align: center; color: red;">Ошибка базы данных.</h3>';
     exit;
 }

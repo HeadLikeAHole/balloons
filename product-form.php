@@ -4,12 +4,16 @@ include 'header.php';
 include 'includes/classes/ProductModel.php';
 include 'includes/classes/CategoryModel.php';
 
-if (isset($_GET['id'])) {
-    $product = (new ProductModel)->get('id', $_GET['id']);
-    if (!$product) header('Location: /404');
-}
+try {
+    if (isset($_GET['id'])) {
+        $product = (new ProductModel)->get('id', $_GET['id']);
+        if (!$product) header('Location: /404');
+    }
 
-$categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
+    $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
+} catch (PDOException $e) {
+    displayDbError();
+}
 
 ?>
 

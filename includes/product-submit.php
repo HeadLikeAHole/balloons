@@ -1,11 +1,9 @@
 <?php
 
 include 'common.php';
+include 'classes/ProductModel.php';
 
 if (isset($_POST['product-submit']) && $user) {
-    include 'classes/ProductModel.php';
-    include 'helperFunctions.php';
-
     try {
         // data to be converted to query string inside "sendError" function
         $data = [];
@@ -30,18 +28,15 @@ if (isset($_POST['product-submit']) && $user) {
         $data['description'] = $description;
 
        if ($id !== null && ($id <= 0 || $id > 2147483647)) {
-           $data['error'] = 'productidinvalid';
-           sendError('product-form', $data);
+           sendMessage('product-form', 'danger', 'Неверный ID товара.');
        }
 
         if ($user_id <= 0 || $user_id > 2147483647) {
-            $data['error'] = 'useridinvalid';
-            sendError('product-form', $data);
+            sendMessage('product-form', 'danger', 'Неверный ID пользователя.');
         }
 
         if ($category_id <= 0 || $category_id > 2147483647) {
-            $data['error'] = 'categoryidinvalid';
-            sendError('product-form', $data);
+            sendMessage('product-form', 'danger', 'Неверный ID категории.');
         }
 
         if (strlen($title) < 1 || strlen($title) > 255) {
@@ -125,10 +120,10 @@ if (isset($_POST['product-submit']) && $user) {
             throw new PDOException;
         }
 
-        header('Location: /?message=success');
+        sendMessage('', 'success', 'Товар был добавлен.');
     } catch (PDOException $e) {
         displayDbError();
     }
 } else {
-    sendError('product-form', 'access-denied');
+    header('Location: /403');
 }

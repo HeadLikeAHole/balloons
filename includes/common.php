@@ -2,6 +2,7 @@
 
 include 'classes/UserModel.php';
 include 'errors.php';
+include 'helperFunctions.php';
 
 session_start();
 

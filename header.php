@@ -44,7 +44,10 @@
         </div>
     </nav>
     <div class="container">
-        <!-- display errors other than from user filled out fields (errors that don't contain hyphens in their names) -->
-        <?php if (isset($_GET['error']) && strpos($_GET['error'], '-') === false): ?>
-            <h5 class="mb-4 text-center text-danger"><?= $errors[$_GET['error']] ?></h5>
-        <?php endif; ?>
+        <!-- display messages -->
+        <?php foreach (getMessages() as $message): ?>
+            <div class="alert alert-<?= $message['type'] ?> alert-dismissible fade show">
+                <?= $message['text'] ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endforeach; ?>

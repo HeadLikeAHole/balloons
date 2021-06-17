@@ -1,9 +1,9 @@
 <?php
 
-if (isset($_POST['login-submit'])) {
-    include 'classes/UserModel.php';
-    include 'helperFunctions.php';
+include 'classes/UserModel.php';
+include 'helperFunctions.php';
 
+if (isset($_POST['login-submit'])) {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 
@@ -46,12 +46,10 @@ if (isset($_POST['login-submit'])) {
         setcookie('username', $username, $expiration, '/');
         setcookie('password', $user->password, $expiration, '/');
 
-        header('Location: /?message=0');
+        sendMessage('', 'success', 'Вы успешно вошли в свой аккаунт.');
     } catch (PDOException $e) {
-        $data['error'] = 'dberror';
-        sendError('login', $data);
+        displayDbError();
     }
 } else {
-    header('Location: /');
-    exit;
+    header('Location: /403');
 }
