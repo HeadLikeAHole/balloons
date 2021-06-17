@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 07:50 PM
+-- Generation Time: Jun 17, 2021 at 09:25 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -42,7 +42,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 (3, 'На день рождения девушке'),
 (4, 'На день рождения парню'),
 (2, 'На день рождения ребёнка'),
-(9, 'На открытие магазина'),
+(8, 'На открытие магазина'),
 (6, 'На свадьбу'),
 (1, 'Слайды');
 
@@ -67,14 +67,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `user_id`, `category_id`, `image_name`, `title`, `description`, `price`) VALUES
-(1, 1, 1, 'b1.jpg', 'One', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', NULL),
-(2, 1, 1, 'b2.jpg', 'Two', 'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-', NULL),
-(3, 1, 1, 'b3.jpg', 'Three', 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-', NULL),
-(4, 1, 2, 'b4.jpg', 'Four', 'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse', NULL),
-(5, 1, 4, 'b5.jpg', 'Five', 'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-', NULL);
+(1, 1, 1, 'b1.jpg', 'One', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', NULL),
+(2, 1, 1, 'b2.jpg', 'Two', 'Dicta ea eveniet facere fugiat fugit,', NULL),
+(3, 1, 1, 'b3.jpg', 'Three', 'incidunt laboriosam necessitatibus odit', NULL),
+(4, 1, 3, 'b4.jpg', 'Four', 'officia quisquam quos rem sequi soluta sunt voluptatibus.', NULL),
+(5, 1, 4, 'b5.jpg', 'Five', 'A atque laudantium saepe.', NULL),
+(6, 1, 7, 'b6.jpg', 'Six', 'Some text.', NULL);
 
 -- --------------------------------------------------------
 
@@ -133,7 +131,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
