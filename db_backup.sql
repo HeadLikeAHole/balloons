@@ -67,10 +67,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `user_id`, `category_id`, `image_name`, `title`, `description`, `price`) VALUES
-(4, 1, 1, 'balloons.jpg', 'Lorem', 'Impsum', NULL),
-(5, 1, 1, 'balloons1.jpeg', 'g5egerger', 'gergre', NULL),
-(6, 1, 1, 'balloons2.jpg', 'rgeg', 'egegerge', NULL),
-(7, 1, 2, 'balloons3.jpg', 'geger', 'gegegre', NULL);
+(1, 1, 1, 'b1.jpg', 'One', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', NULL),
+(2, 1, 1, 'b2.jpg', 'Two', 'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+', NULL),
+(3, 1, 1, 'b3.jpg', 'Three', 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+', NULL),
+(4, 1, 2, 'b4.jpg', 'Four', 'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse', NULL),
+(5, 1, 4, 'b5.jpg', 'Five', 'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+', NULL);
 
 -- --------------------------------------------------------
 

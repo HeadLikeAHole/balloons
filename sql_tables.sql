@@ -1,4 +1,6 @@
-CREATE DATABASE `balloons`;
+CREATE DATABASE `balloons`
+    CHARACTER SET = 'utf8'
+    COLLATE = 'utf8_general_ci';
 
 CREATE TABLE `users` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
