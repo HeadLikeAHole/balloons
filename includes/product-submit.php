@@ -7,7 +7,7 @@ if (isset($_POST['product-submit']) && $user) {
     include 'helperFunctions.php';
 
     try {
-        // data to be converted to query string inside "sendError" method
+        // data to be converted to query string inside "sendError" function
         $data = [];
 
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
@@ -29,17 +29,17 @@ if (isset($_POST['product-submit']) && $user) {
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
         $data['description'] = $description;
 
-       if ($id !== null && (!is_numeric($id) || $id <= 0 || $id > 2147483647)) {
+       if ($id !== null && ($id <= 0 || $id > 2147483647)) {
            $data['error'] = 'productidinvalid';
            sendError('product-form', $data);
        }
 
-        if (!is_numeric($user_id) || $user_id <= 0 || $user_id > 2147483647) {
+        if ($user_id <= 0 || $user_id > 2147483647) {
             $data['error'] = 'useridinvalid';
             sendError('product-form', $data);
         }
 
-        if (!is_numeric($category_id) || $category_id <= 0 || $category_id > 2147483647) {
+        if ($category_id <= 0 || $category_id > 2147483647) {
             $data['error'] = 'categoryidinvalid';
             sendError('product-form', $data);
         }
@@ -49,7 +49,7 @@ if (isset($_POST['product-submit']) && $user) {
             sendError('product-form', $data);
         }
 
-        if (strlen($description) < 1 || strlen($description  > 65535)) {
+        if (strlen($description) < 1 || strlen($description) > 65535) {
             $data['error'] = 'description-invalid';
             sendError('product-form', $data);
         }
