@@ -1,2 +1,1 @@
-- ?add transparent layer to slides
 - ?pagination

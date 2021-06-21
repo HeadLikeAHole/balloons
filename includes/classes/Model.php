@@ -17,7 +17,6 @@ class Model
     private function query($sql, $params = [])
     {
         $query = $this->pdo->prepare($sql);
-
         $query->execute($params);
 
         $query->setFetchMode(PDO::FETCH_CLASS, get_called_class());
@@ -30,7 +29,7 @@ class Model
         $sql = "SELECT * FROM $this->tableName WHERE $column = :$column";
 
         $params = [":$column" => $value];
-
+     
         $query = $this->query($sql, $params);
 
         return $query->fetch();
@@ -71,11 +70,27 @@ class Model
         return $query->fetchAll();
     }
 
+    public function count($column = null, $value = null)
+	{
+		$sql = "SELECT COUNT(*) FROM $this->tableName";
+        $params = [];
+
+        if ($column) {
+			$sql .= " WHERE $column=:$column";
+            $params = [":$column" => $value];
+		}
+
+        $query = $this->query($sql, $params);
+
+        // return an array where the first element is number of rows
+		return $query->fetch(PDO::FETCH_NUM)[0];
+	}
+
     private function create($fields)
     {
         $columns = '';
         $params = '';
-
+        
         $sql = "INSERT INTO $this->tableName (";
 
         foreach ($fields as $key => $_) {

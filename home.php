@@ -26,6 +26,7 @@ try {
         <?php foreach ($slides as $index => $slide): ?>
             <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
                 <img src="<?= $slide->getImageUrl() ?>" class="d-block w-100 h-100 slide" alt="...">
+                <div class="image-overlay"></div>
                 <div class="carousel-caption">
                     <h1><?= $slide->title ?></h1>
                     <p><?= $slide->description ?></p>

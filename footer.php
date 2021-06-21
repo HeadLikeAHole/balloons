@@ -1,6 +1,6 @@
     </div>
     <footer class="bg-primary text-light">
-        Designed by Igor (email: igorwho@yandex.ru)
+        <p>Тел.: +380713908843, +380996308933 - Viber, Whatsapp</p>
     </footer>
 
     <!-- JavaScript Bundle with Popper -->
