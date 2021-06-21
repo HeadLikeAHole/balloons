@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2021 at 09:25 PM
+-- Generation Time: Jun 21, 2021 at 09:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -70,9 +70,10 @@ INSERT INTO `products` (`id`, `user_id`, `category_id`, `image_name`, `title`, `
 (1, 1, 1, 'b1.jpg', 'One', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', NULL),
 (2, 1, 1, 'b2.jpg', 'Two', 'Dicta ea eveniet facere fugiat fugit,', NULL),
 (3, 1, 1, 'b3.jpg', 'Three', 'incidunt laboriosam necessitatibus odit', NULL),
-(4, 1, 3, 'b4.jpg', 'Four', 'officia quisquam quos rem sequi soluta sunt voluptatibus.', NULL),
-(5, 1, 4, 'b5.jpg', 'Five', 'A atque laudantium saepe.', NULL),
-(6, 1, 7, 'b6.jpg', 'Six', 'Some text.', NULL);
+(4, 1, 4, 'b4.jpg', 'Four', 'officia quisquam quos rem sequi soluta sunt voluptatibus.', NULL),
+(7, 1, 4, 'b5.jpg', 'Hot Air Balloon', 'I wish I were here.', NULL),
+(8, 1, 8, 'b6.jpg', 'Sky', 'Balloons high in the sky.', NULL),
+(9, 1, 4, 'b7.jpg', 'Шарик', 'Эх, шарик, я как и ты рубал хозяйские харчи.', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
