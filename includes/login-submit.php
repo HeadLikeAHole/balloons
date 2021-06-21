@@ -46,7 +46,7 @@ if (isset($_POST['login-submit'])) {
         setcookie('username', $username, $expiration, '/');
         setcookie('password', $user->password, $expiration, '/');
 
-        sendMessage('', 'success', 'Вы успешно вошли в свой аккаунт.');
+        sendMessage('', 'success', 'Вы вошли в свой аккаунт.');
     } catch (PDOException $e) {
         displayDbError();
     }

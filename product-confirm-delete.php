@@ -2,7 +2,7 @@
 
 <div class="card">
     <div class="card-body text-center">
-        <h1 class="card-title mb-4">Вы уверены?</h1>
+        <h2 class="card-title mb-4">Вы уверены, что хотите удалить данный товар?</h2>
         <form action="/includes/product-delete" method="post">
             <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
             <input type="hidden" name="previous_page" value="<?= $_GET['id'] ?>">

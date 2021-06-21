@@ -3,12 +3,16 @@
 include 'includes/classes/ProductModel.php';
 include 'includes/classes/CategoryModel.php';
 
-$slides = (new ProductModel)->getAll(['category_id' => 1]);
+try {
+    $slides = (new ProductModel)->getAll(['category_id' => 1]);
 
-$categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
+    $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
 
-// all categories except slides
-$categories = array_slice($categories, 1);
+    // all categories except slides
+    $categories = array_slice($categories, 1);
+} catch (PDOException $e) {
+    displayDbError();
+}
 
 ?>
 
@@ -26,7 +30,7 @@ $categories = array_slice($categories, 1);
                     <h1><?= $slide->title ?></h1>
                     <p><?= $slide->description ?></p>
                     <?php if ($user): ?>
-                        <a href="/product-form?id=<?= $slide->id ?>"><button type="button" class="btn btn-warning btn-sm">Изменить</button></a>
+                        <a href="/product-form?id=<?= $slide->id ?>"><button type="button" class="btn btn-warning btn-sm me-1">Изменить</button></a>
                         <a href="/product-confirm-delete?id=<?= $slide->id ?>"><button type="button" class="btn btn-danger btn-sm">Удалить</button></a>
                     <?php endif; ?>
                 </div>

@@ -25,7 +25,11 @@ if (isset($_POST['product-delete']) && $user) {
 
             $product->delete();
         }
-        sendMessage('', 'success', 'Товар был удален.');
+        sendMessage(
+            $product->category_id == 1 ? '' : "products?category=$product->category_id",
+            'warning',
+            'Товар был удален.'
+        );
     } catch (PDOException $e) {
         displayDbError();
     }

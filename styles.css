@@ -1,5 +1,32 @@
+body {
+    /* set to relative to position footer absolutely to it */
+    position: relative;
+    /* pins footer to the bottom if not enough content on the page */
+    min-height: 100vh;
+}
+
+.container {
+    /* padding prevents footer from overlapping */
+    padding-bottom: 6rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 4rem;
+    width: 100%;
+    /* pins footer to the bottom of container */
+    bottom: 0;
+}
+
 .slide {
     object-fit: cover;
+}
+
+.carousel-item img {
+    height: 100rem;
 }
 
 @media screen and (min-width: 768px) {

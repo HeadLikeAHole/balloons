@@ -120,7 +120,11 @@ if (isset($_POST['product-submit']) && $user) {
             throw new PDOException;
         }
 
-        sendMessage('', 'success', 'Товар был добавлен.');
+        sendMessage(
+            !$category_id || $category_id == 1  ? '' : "products?category=$category_id",
+            'success',
+            !$id ? 'Товар был добавлен.' : 'Товар был изменен.'
+        );
     } catch (PDOException $e) {
         displayDbError();
     }

@@ -1,3 +1,2 @@
-- footer
-- product list
-- 404 and 403 pages
+- ?add transparent layer to slides
+- ?pagination
