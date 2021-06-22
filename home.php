@@ -4,9 +4,9 @@ include 'includes/classes/ProductModel.php';
 include 'includes/classes/CategoryModel.php';
 
 try {
-    $slides = (new ProductModel)->getAll(['category_id' => 1]);
+    $slides = (new ProductModel($pdo))->getAll(['category_id' => 1]);
 
-    $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
+    $categories = (new CategoryModel($pdo))->getAll([], ['order_by' => 'id']);
 
     // all categories except slides
     $categories = array_slice($categories, 1);

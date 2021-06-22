@@ -6,7 +6,7 @@ class UserModel extends Model
 {
     protected $tableName = 'users';
 
-    function getLoggedInUser()
+    public function getLoggedInUser()
     {
         if (isset($_SESSION['username'])) {
             $user = $this->get('username', $_SESSION['username']);

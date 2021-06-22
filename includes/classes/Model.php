@@ -1,17 +1,12 @@
 <?php
 
-
 class Model
 {
-    protected $tableName;
     private $pdo;
+    protected $tableName;
 
-    public function __construct() {
-        include __DIR__ . '/../../config.php';
-
-        $this->pdo = new PDO($dns, $user, $password);
-
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    public function __construct($pdo) {
+        $this->pdo = $pdo;
     }
 
     private function query($sql, $params = [])
