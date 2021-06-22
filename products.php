@@ -1,35 +1,36 @@
 <?php
 
-    include 'header.php';
-    include 'includes/classes/CategoryModel.php';
-    include 'includes/classes/ProductModel.php';
+include 'header.php';
+include 'includes/classes/CategoryModel.php';
+include 'includes/classes/ProductModel.php';
 
-    try {
-        $category_id = filter_input(INPUT_GET, 'category', FILTER_SANITIZE_NUMBER_INT);
+try {
+    $category_id = filter_input(INPUT_GET, 'category', FILTER_SANITIZE_NUMBER_INT);
 
-        $category = (new CategoryModel)->get('id', $category_id);
+    $category = (new CategoryModel)->get('id', $category_id);
 
-        $page = $_GET['page'] ?? 1;
-        $limit = 1;
-        $offset = ($page - 1) * $limit;
+    $page = $_GET['page'] ?? 1;
+    // items per page
+    $limit = 10;
+    $offset = ($page - 1) * $limit;
 
-        $productModel = new ProductModel();
-        
-        $products = $productModel->getAll(
-            [
-                'category_id' => $category_id
-            ],
-            [
-                'orderBy' => '-id',
-                'limit' => $limit,
-                'offset' => $offset
-            ]
-        );
+    $productModel = new ProductModel();
 
-        $total = $productModel->count('category_id', $category_id);        
-    } catch (PDOException $e) {
-        displayDbError();
-    }
+    $products = $productModel->getAll(
+        [
+            'category_id' => $category_id
+        ],
+        [
+            'orderBy' => '-id',
+            'limit' => $limit,
+            'offset' => $offset
+        ]
+    );
+
+    $total = $productModel->count('category_id', $category_id);
+} catch (PDOException $e) {
+    displayDbError();
+}
 
 ?>
 
@@ -58,7 +59,9 @@
 <?php endif; ?>
 
 <?php
-    if ($total > $limit) include 'pagination.php';
-    
-    include 'footer.php';
+
+if ($total > $limit) include 'pagination.php';
+
+include 'footer.php';
+
 ?>

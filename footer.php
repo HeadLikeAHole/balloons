@@ -1,6 +1,6 @@
     </div>
-    <footer class="bg-primary text-light">
-        <p>Тел.: +380713908843, +380996308933 - Viber, Whatsapp</p>
+    <footer class="bg-primary text-center text-break text-light">
+        <div class="mx-3 text-break">Телефон: +380713908843 | Viber, Whatsapp: +380996308933</div>
     </footer>
 
     <!-- JavaScript Bundle with Popper -->

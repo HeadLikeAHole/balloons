@@ -15,10 +15,10 @@ footer {
     justify-content: center;
     align-items: center;
     position: absolute;
-    height: 4rem;
-    width: 100%;
     /* pins footer to the bottom of container */
     bottom: 0;
+    width: 100%;
+    height: 4rem;
 }
 
 .slide {

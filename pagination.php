@@ -1,6 +1,4 @@
-<?php 
-  $numOfPages = ceil($total / $limit);
-?>
+<?php $numOfPages = ceil($total / $limit); ?>
 
 <nav class="d-flex justify-content-center mt-5">
   <ul class="pagination">
