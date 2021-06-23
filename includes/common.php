@@ -1,13 +1,13 @@
 <?php
 
-include 'dbConnection.php';
+include 'db.php';
 include 'classes/UserModel.php';
-include 'helperFunctions.php';
+include 'fns.php';
 
 session_start();
 
 try {
-    $user = (new UserModel($pdo))->getLoggedInUser();
+    $user = (new UserModel)->getLoggedInUser();
 } catch (PDOException $e) {
     displayDbError();
 }

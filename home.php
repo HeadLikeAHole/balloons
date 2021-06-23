@@ -4,9 +4,9 @@ include 'includes/classes/ProductModel.php';
 include 'includes/classes/CategoryModel.php';
 
 try {
-    $slides = (new ProductModel($pdo))->getAll(['category_id' => 1]);
+    $slides = (new ProductModel)->getAll(['category_id' => 1]);
 
-    $categories = (new CategoryModel($pdo))->getAll([], ['order_by' => 'id']);
+    $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
 
     // all categories except slides
     $categories = array_slice($categories, 1);
@@ -52,8 +52,8 @@ try {
     <?php foreach ($categories as $category): ?>
         <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
             <div class="card mb-1 bg-light bg-gradient">
-                <div class="card-body shadow-sm">
-                    <a href="/products?category=<?= $category->id ?>" class="text-decoration-none"><h5 class="card-title text-center"><?= $category->name ?></h5></a>
+                <div class="card-body shadow-sm text-center fs-5">
+                    <a href="/products?category=<?= $category->id ?>" class="text-decoration-none"><?= $category->name ?></a>
                 </div>
             </div>
         </div>

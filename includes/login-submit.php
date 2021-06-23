@@ -1,7 +1,8 @@
 <?php
 
+include 'db.php';
 include 'classes/UserModel.php';
-include 'helperFunctions.php';
+include 'fns.php';
 
 if (isset($_POST['login-submit'])) {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);

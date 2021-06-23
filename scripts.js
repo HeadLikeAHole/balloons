@@ -5,6 +5,9 @@ if (window.location.pathname === '/product-form') {
 
     imageInput.addEventListener('change', e => {
         const [file] = e.target.files;
-        if (file) imagePreview.src = URL.createObjectURL(file);
+        if (file) {
+            imagePreview.classList.remove('d-none');
+            imagePreview.src = URL.createObjectURL(file);
+        }
     });
 }

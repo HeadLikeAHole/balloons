@@ -1,6 +1,6 @@
 <?php
 
-include 'helperFunctions.php';
+include 'fns.php';
 
 session_start();
 

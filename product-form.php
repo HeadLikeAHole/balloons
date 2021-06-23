@@ -32,12 +32,12 @@ try {
             <?php if (isset($_GET['error']) && substr($_GET['error'], 0, strlen('image-')) === 'image-'): ?>
                 <div class="invalid-feedback"><?= $errors[$_GET['error']] ?></div>
             <?php endif; ?>
-            <div class="mt-3">
-                <img src="<?= isset($product) ? $product->getImageUrl() : '' ?>" alt="" id="image-preview" class="w-100">
+            <div class="mt-4">
+                <img src="<?= isset($product) ? $product->getImageUrl() : '' ?>" alt="" id="image-preview" class="d-none w-100">
             </div>
         </div>
 
-        <div class="mb-4">
+        <div class="my-4">
             <label for="title" class="form-label">Haзвание</label>
             <input type="text" class="form-control <?= isset($_GET['error']) && substr($_GET['error'], 0, strlen('title-')) === 'title-' ? 'is-invalid' : '' ?>" id="title" name="title" value="<?= $_GET['title'] ?? $product->title ?? '' ?>">
             <!-- display title field error (starts with "title-") -->

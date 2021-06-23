@@ -5,7 +5,9 @@ class Model
     private $pdo;
     protected $tableName;
 
-    public function __construct($pdo) {
+    public function __construct()
+    {
+        global $pdo;
         $this->pdo = $pdo;
     }
 
