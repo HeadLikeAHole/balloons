@@ -33,7 +33,7 @@ try {
                 <div class="invalid-feedback"><?= $errors[$_GET['error']] ?></div>
             <?php endif; ?>
             <div class="mt-4">
-                <img src="<?= isset($product) ? $product->getImageUrl() : '' ?>" alt="" id="image-preview" class="d-none w-100">
+                <img src="<?= isset($product) ? $product->getImageUrl() : '' ?>" alt="" id="image-preview" class="<?= $_GET['id'] ?? 'd-none' ?> w-100">
             </div>
         </div>
 
