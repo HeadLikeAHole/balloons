@@ -30,7 +30,7 @@
                 <?php if ($user): ?>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/product-form">Создать</a>
+                            <a class="nav-link" href="/product-form?prev=<?= urlencode($_SERVER['REQUEST_URI']) ?>">Создать</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><?= $user->username ?></a>

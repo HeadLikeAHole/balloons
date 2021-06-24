@@ -18,7 +18,7 @@ try {
 ?>
 
 <div class="product-form mx-auto">
-    <h1 class="display-4 text-center mb-5">Создать товар</h1>
+    <h1 class="display-4 text-center mb-5"><?= !isset($_GET['id']) ? 'Создать' : 'Изменить' ?> товар</h1>
 
     <form action="includes/product-submit" method="post" enctype="multipart/form-data">
         <input type="hidden" id="id" name="id" value="<?= $product->id ?? '' ?>">
@@ -55,7 +55,7 @@ try {
             <?php endif; ?>
         </div>
 
-        <div class="mb-4">
+        <div class="mb-5">
             <label for="category_id" class="form-label">Категория</label>
             <select class="form-select" id="category_id" name="category_id">
                 <?php foreach ($categories as $category): ?>
@@ -69,7 +69,10 @@ try {
             </select>
         </div>
 
-        <button type="submit" name="product-submit" class="btn btn-primary">Сохранить</button>
+        <div class="d-grid gap-3 d-md-block">
+            <button type="submit" name="product-submit" class="btn btn-success me-md-1">Сохранить</button>
+            <a href="<?= isset($_GET['prev']) ? urldecode($_GET['prev']) : '/' ?>" class="btn btn-secondary">Отмена</a>
+        </div>
     </form>
 </div>
 

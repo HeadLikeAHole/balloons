@@ -43,8 +43,8 @@ try {
                 <h5 class="card-title"><?= $product->title ?></h5>
                 <p class="card-text"><?= $product->description ?></p>
                 <?php if ($user): ?>
-                    <a href="/product-form?id=<?= $product->id ?>"><button type="button" class="btn btn-warning btn-sm me-1">Изменить</button></a>
-                    <a href="/product-confirm-delete?id=<?= $product->id ?>"><button type="button" class="btn btn-danger btn-sm">Удалить</button></a>
+                    <a href="/product-form?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-warning me-2">Изменить</button></a>
+                    <a href="/product-confirm-delete?id=<?= $product->id ?>"><button type="button" class="btn btn-danger">Удалить</button></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -53,7 +53,7 @@ try {
     <div class="card">
         <div class="card-body text-center">
             <h3 class="card-title mb-4">В данной категории ничего нет.</h3>
-            <a href="/" class="text-decoration-none text-uppercase">← вернуться назад</a>
+            <a href="/" class="text-decoration-none text-uppercase fs-5">← вернуться назад</a>
         </div>
     </div>
 <?php endif; ?>

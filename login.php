@@ -11,14 +11,18 @@
             <div class="invalid-feedback"><?= $errors[$_GET['error']] ?></div>
         <?php endif; ?>
     </div>
-    <div class="mb-3">
+    <div class="mb-5">
         <label for="password" class="form-label">Пароль</label>
         <input type="password" class="form-control <?= isset($_GET['error']) && substr($_GET['error'], 0, strlen('password-')) === 'password-' ? 'is-invalid' : '' ?>" id="password" name="password">
         <?php if (isset($_GET['error']) && substr($_GET['error'], 0, strlen('password-')) === 'password-'): ?>
             <div class="invalid-feedback"><?= $errors[$_GET['error']] ?></div>
         <?php endif; ?>
     </div>
-    <button type="submit" name="login-submit" class="btn btn-primary">Войти</button>
+
+    <div class="d-grid gap-3 d-md-block">
+            <button type="submit" name="login-submit" class="btn btn-success me-md-1">Войти</button>
+            <a href="/" class="btn btn-secondary">Отмена</a>
+        </div>
 </form>
 
 <?php include 'footer.php' ?>
