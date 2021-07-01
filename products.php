@@ -44,7 +44,7 @@ try {
                 <p class="card-text"><?= $product->description ?></p>
                 <?php if ($user): ?>
                     <a href="/product-form?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-warning me-2">Изменить</button></a>
-                    <a href="/product-confirm-delete?id=<?= $product->id ?>"><button type="button" class="btn btn-danger">Удалить</button></a>
+                    <a href="/product-confirm-delete?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-danger">Удалить</button></a>
                 <?php endif; ?>
             </div>
         </div>

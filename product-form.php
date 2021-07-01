@@ -20,7 +20,7 @@ try {
 <div class="product-form mx-auto">
     <h1 class="display-4 text-center mb-5"><?= !isset($_GET['id']) ? 'Создать' : 'Изменить' ?> товар</h1>
 
-    <form action="includes/product-submit" method="post" enctype="multipart/form-data">
+    <form action="/includes/product-submit" method="post" enctype="multipart/form-data">
         <input type="hidden" id="id" name="id" value="<?= $product->id ?? '' ?>">
 
         <input type="hidden" id="user_id" name="user_id" value="<?= $user->id ?>">
