@@ -33,6 +33,9 @@
                             <a class="nav-link" href="/product-form?prev=<?= urlencode($_SERVER['REQUEST_URI']) ?>">Создать</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/categories">Категории</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#"><?= $user->username ?></a>
                         </li>
                         <li class="nav-item">

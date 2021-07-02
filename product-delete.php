@@ -1,7 +1,7 @@
 <?php
 
-include 'common.php';
-include 'classes/ProductModel.php';
+include 'includes/common.php';
+include 'includes/classes/ProductModel.php';
 
 if (isset($_POST['product-delete']) && $user) {
     try {
