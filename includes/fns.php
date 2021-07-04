@@ -11,6 +11,7 @@ function sendMessage($to, $type, $message)
     if (!isset($_SESSION['messages'])) $_SESSION['messages'] = [];
     $_SESSION['messages'][] = ['type' => $type, 'text' => $message];
     header("Location: /$to");
+    exit;
 }
 
 function getMessages()

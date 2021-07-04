@@ -17,7 +17,7 @@ try {
 
 ?>
 
-<div class="product-form mx-auto">
+<div class="mx-auto">
     <h1 class="display-4 text-center mb-5"><?= !isset($_GET['id']) ? 'Создать' : 'Изменить' ?> товар</h1>
 
     <form action="/includes/product-submit" method="post" enctype="multipart/form-data">
@@ -77,4 +77,3 @@ try {
 </div>
 
 <?php include 'footer.php' ?>
-

@@ -14,7 +14,8 @@ $errors = [
     'image-name-exists' => 'Изображение с таким именем уже существует.',
     'image-upload-failure' => 'Неудалось загрузить изображение.',
     'image-update-failure' => 'Неудалось обновить изображение.',
-    'image-delete-failure' => 'Неудалось удалить изображение.'
+    'image-delete-failure' => 'Неудалось удалить изображение.',
+    'name-invalid' => 'Название категории должно содержать от 1 до 255 символов.',
 ];
 
 function displayDbError()

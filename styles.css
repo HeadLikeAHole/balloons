@@ -38,8 +38,8 @@ footer {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
 
-@media screen and (min-width: 768px) {
-    .product-form {
-        width: 550px;
-    }
+form {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
 }

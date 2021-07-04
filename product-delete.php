@@ -25,6 +25,7 @@ if (isset($_POST['product-delete']) && $user) {
 
             $product->delete();
         }
+
         sendMessage(
             $product->category_id == 1 ? '' : "products?category=$product->category_id",
             'warning',
