@@ -36,19 +36,23 @@ try {
 
 <?php if ($products): ?>
     <h3 class="mb-4 text-center">Категория: <span class="text-lowercase fst-italic"><?= $category->name ?></span></h3>
-    <?php foreach ($products as $product): ?>
-        <div class="card mx-auto mb-4" style="max-width: 40rem;">
-            <img src="<?= $product->getImageUrl() ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><?= $product->title ?></h5>
-                <p class="card-text"><?= $product->description ?></p>
-                <?php if ($user): ?>
-                    <a href="/product-form?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-warning me-2">Изменить</button></a>
-                    <a href="/product-confirm-delete?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-danger">Удалить</button></a>
-                <?php endif; ?>
-            </div>
+    <div class="row">
+        <div class="col-3">
+            <?php foreach ($products as $product): ?>
+                <div class="card mx-auto mb-4" style="max-width: 40rem;">
+                    <img src="<?= $product->getImageUrl() ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $product->title ?? '' ?></h5>
+                        <p class="card-text"><?= $product->description ?? '' ?></p>
+                        <?php if ($user): ?>
+                            <a href="/product-form?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-warning me-2">Изменить</button></a>
+                            <a href="/product-confirm-delete?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-danger">Удалить</button></a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>       
         </div>
-    <?php endforeach; ?>
+    </div>
 <?php else: ?>
     <div class="card">
         <div class="card-body text-center">

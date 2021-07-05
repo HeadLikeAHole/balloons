@@ -28,8 +28,8 @@ try {
                 <img src="<?= $slide->getImageUrl() ?>" class="d-block w-100 h-100 slide" alt="...">
                 <div class="image-overlay"></div>
                 <div class="carousel-caption">
-                    <h1><?= $slide->title ?></h1>
-                    <p><?= $slide->description ?></p>
+                    <h1><?= $slide->title ?? '' ?></h1>
+                    <p><?= $slide->description ?? '' ?></p>
                     <?php if ($user): ?>
                         <a href="/product-form?id=<?= $slide->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-warning me-2">Изменить</button></a>
                         <a href="/product-confirm-delete?id=<?= $slide->id ?>"><button type="button" class="btn btn-danger">Удалить</button></a>

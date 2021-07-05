@@ -11,8 +11,8 @@ CREATE TABLE `products` (
     `user_id` INT NOT NULL,
     `category_id` INT NOT NULL,
     `image_name` VARCHAR(55) NOT NULL,
-    `title` VARCHAR(255) NOT NULL,
-    `description` TEXT NOT NULL,
+    `title` VARCHAR(255),
+    `description` TEXT,
     `price` INT
 ) CHARACTER SET = 'utf8' COLLATE = 'utf8_general_ci';
 

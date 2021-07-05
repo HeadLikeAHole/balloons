@@ -39,12 +39,12 @@ if (isset($_POST['product-submit']) && $user) {
             sendMessage('product-form', 'danger', 'Неверный ID категории.');
         }
 
-        if (strlen($title) < 1 || strlen($title) > 255) {
+        if (strlen($title) > 255) {
             $data['error'] = 'title-invalid';
             sendError('product-form', $data);
         }
 
-        if (strlen($description) < 1 || strlen($description) > 65535) {
+        if (strlen($description) > 65535) {
             $data['error'] = 'description-invalid';
             sendError('product-form', $data);
         }
