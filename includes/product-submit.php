@@ -72,7 +72,7 @@ if (isset($_POST['product-submit']) && $user) {
                 sendError('product-form', $data);
             }
 
-            if (preg_match('/^[a-zA-Z0-9\s_-]+\.(jpg|jpeg|png|gif)$/', $imageName) != 1) {
+            if (preg_match('/^[а-яА-Яa-zA-Z0-9\s_\-\(\)\.]+\.(jpg|jpeg|png|gif)$/', $imageName) != 1) {
                 $data['error'] = 'image-extension-invalid';
                 sendError('product-form', $data);
             }

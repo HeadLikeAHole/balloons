@@ -7,7 +7,7 @@ body {
 
 .container {
     /* padding prevents footer from overlapping */
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
 }
 
 footer {

@@ -13,14 +13,12 @@ if (isset($_POST['product-delete']) && $user) {
         $product = (new ProductModel())->get('id', $id);
 
         if ($product) {
-            $imageFilePath = '../images/' . $product->image_name;
+            $imageFilePath = 'images/' . $product->image_name;
 
-            if (file_exists($imageFilePath)) {
-                if (!unlink($imageFilePath)) {
-                    $data['category'] = $product->category_id;
-                    $data['error'] = 'image-delete-failure';
-                    sendError('products', $data);
-                }
+            if (!file_exists($imageFilePath) || !unlink($imageFilePath)) {
+                $data['category'] = $product->category_id;
+                $data['error'] = 'image-delete-failure';
+                sendError('products', $data);
             }
 
             $product->delete();
