@@ -11,7 +11,7 @@ try {
 
     $page = $_GET['page'] ?? 1;
     // items per page
-    $limit = 6;
+    $limit = 24;
     $offset = ($page - 1) * $limit;
 
     $productModel = new ProductModel();
@@ -35,7 +35,7 @@ try {
 ?>
 
 <?php if ($products): ?>
-    <h3 class="mb-4 text-center">Категория: <span class="text-lowercase fst-italic"><?= $category->name ?></span></h3>
+    <h3 class="mb-3 text-center">Категория: <span class="text-lowercase fst-italic"><?= $category->name ?></span></h3>
     <div class="row">
         <?php foreach ($products as $product): ?>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 g-1 g-md-2 g-xl-3">
@@ -46,8 +46,8 @@ try {
 <?php else: ?>
     <div class="card">
         <div class="card-body text-center">
-            <h3 class="card-title mb-4">В данной категории ничего нет.</h3>
-            <a href="/" class="text-decoration-none text-uppercase fs-5">← вернуться назад</a>
+            <h3 class="card-title mb-3">В данной категории ничего нет.</h3>
+            <a href="/" class="text-decoration-none text-uppercase"><h5>← вернуться назад</h5></a>
         </div>
     </div>
 <?php endif; ?>

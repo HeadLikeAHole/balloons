@@ -18,11 +18,11 @@ try {
         <h3 class="mb-4">Список категорий:</h3>
 
         <div class="mb-4 text-start">
-            <a href="/category-form" class="btn btn-primary btn-lg">Добавить категорию</a>
+            <a href="/category-form" class="d-block d-sm-inline btn btn-primary btn-lg">Добавить категорию</a>
         </div>
 
         <?php foreach ($categories as $category): ?>
-            <div class="card mb-4">
+            <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title mb-4"><?= $category->name ?></h5>
                     <a href="/category-form?id=<?= $category->id ?>"><button type="button" class="btn btn-warning me-2">Изменить</button></a>
