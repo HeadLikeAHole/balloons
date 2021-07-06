@@ -46,11 +46,11 @@ class Model
             $sql = rtrim($sql, ' AND ');
         }
 
-        if (isset($params['orderBy'])) {
-            if ($params['orderBy'][0] === '-') {
-                $sql .= ' ORDER BY ' . substr($params['orderBy'], 1) . ' DESC';
+        if (isset($params['order_by'])) {
+            if ($params['order_by'][0] === '-') {
+                $sql .= ' ORDER BY ' . substr($params['order_by'], 1) . ' DESC';
             } else {
-                $sql .= ' ORDER BY ' . $params['orderBy'] . ' ASC';
+                $sql .= ' ORDER BY ' . $params['order_by'] . ' ASC';
             }
         }
 

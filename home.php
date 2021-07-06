@@ -4,7 +4,7 @@ include 'includes/classes/ProductModel.php';
 include 'includes/classes/CategoryModel.php';
 
 try {
-    $slides = (new ProductModel)->getAll(['category_id' => 1]);
+    $slides = (new ProductModel)->getAll(['category_id' => 1], ['order_by' => 'id']);
 
     $categories = (new CategoryModel)->getAll([], ['order_by' => 'id']);
 

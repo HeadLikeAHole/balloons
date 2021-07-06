@@ -21,7 +21,7 @@ try {
             'category_id' => $category_id
         ],
         [
-            'orderBy' => '-id',
+            'order_by' => '-id',
             'limit' => $limit,
             'offset' => $offset
         ]
