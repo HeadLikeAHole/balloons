@@ -21,6 +21,7 @@ try {
             <a href="/product-form?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-warning me-1">Изменить</button></a>
             <a href="/product-confirm-delete?id=<?= $product->id . '&prev=' . urlencode($_SERVER['REQUEST_URI']) ?>"><button type="button" class="btn btn-danger">Удалить</button></a>
         <?php endif; ?>
+        <a href="products?category=<?= $product->category_id ?>" class="text-decoration-none text-uppercase"><h6 class="my-4">← вернуться назад</h6></a>
     </div>
 </div>
 
